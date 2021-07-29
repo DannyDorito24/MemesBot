@@ -6,40 +6,44 @@ description = '''An example bot to showcase the discord.ext.commands extension
 module.
 There are a number of utility commands being showcased here.'''
 
-bot = commands.Bot(command_prefix=',', description=description, intents=intents)
+bot = commands.Bot(command_prefix=',')
 
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user} (ID: {bot.user.id})')
     print('------')
 
-@bot.command()
+@bot.command(name="info")
 async def info(ctx):
-    await ctx.send("This bot was programmed by DannyDorito ~~using a ton of code from stackoverflow~~ \n \n The commands that can be used are: \n ``!save <name> <url>`` to save a file \n ``!meme <name>`` to recall an image \n ``!list`` to list all memes in the database")
+    await ctx.send("This bot was programmed by CactiStaccingCrane ~~using a ton of code from stackoverflow and dannydorito~~")
 
-@bot.command()
+@bot.command(name="earth")
 async def earth(ctx):
-    await ctx.send("The earth is round.")
+    await ctx.send("The earth is a geode, with a spheroid approximation.")
 
-@bot.command()
+@bot.command(name="brassmonkey")
 async def brassmonkey(ctx):
     await ctx.send("<:brassmonkey:869426385062617158>")
 
-@bot.command()
+@bot.command(name="meme")
 async def meme(ctx):
-    await ctx.send("<@381608421906186240> Go implement this feature you lazy piece of shit")
+    await ctx.send("<@840036645750702100> Go implement this feature you lazy piece of shit")
 
-@bot.command()
+@bot.command(name="list")
 async def list(ctx):
-    await ctx.send("<@381608421906186240> Go implement this feature you lazy piece of shit")
+    await ctx.send("<@840036645750702100> Go implement this feature you lazy piece of shit")
 
-@bot.command()
+@bot.command(name="save")
 async def save(ctx, name: str, url: str):
     table = {"name":name, "url":url}
     jsonString = json.dumps(aList)
     jsonFile = open("urls.json", "w")
     jsonFile.write(jsonString)
     jsonFile.close()
-    await ctx.send("``"name"``" + " has been written to the list")
+    await ctx.send(name + " has been written to the list")
 
-bot.run('token') # reeeeeeeee
+@bot.command(name="github")
+async def list(ctx):
+    await ctx.send("https://github.com/DannyDorito24/MemesBot")
+
+bot.run(TOKEN) # reeeeeeeee
