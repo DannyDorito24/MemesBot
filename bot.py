@@ -34,13 +34,11 @@ async def list(ctx):
     await ctx.send("<@840036645750702100> Go implement this feature you lazy piece of shit")
 
 @bot.command(name="save")
-async def save(ctx, name: str, url: str):
-    table = {"name":name, "url":url}
-    jsonString = json.dumps(aList)
-    jsonFile = open("urls.json", "w")
-    jsonFile.write(jsonString)
-    jsonFile.close()
-    await ctx.send(name + " has been written to the list")
+async def save(ctx, name, url):
+    data = {}
+    data['memes'] = []
+    data['memes'].append({"name": name, "url": url})
+    await ctx.send(name + " has been written to the list, its like is " + url)
 
 @bot.command(name="github")
 async def list(ctx):
