@@ -40,13 +40,12 @@ async def list(ctx, name):
 @bot.command(name="save")
 async def save(ctx, name, url):
     data = {}
-    data['memes'] = []
-    data['memes'].append("name": name, "url": url)
+    data[name] = url
     await ctx.send(name + " has been written to the list, its link is " + url)
     with open('meme.json', 'w') as outfile: json.dump(data, outfile)
 
 @bot.command(name="github")
 async def list(ctx):
     await ctx.send("https://github.com/DannyDorito24/MemesBot")
-
+    
 bot.run(TOKEN) # reeeeeeeee
