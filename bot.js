@@ -26,7 +26,7 @@ client
     const args = messageSplit.slice(1);
 
     if (cmd === "info") {
-        message.channel.send("This bot was programmed by DannyDorito ~~using a ton of code from stackoverflow~~ \n \n The commands that can be used are: \n ``!save <name> <url>`` to save a file \n ``!meme <name>`` to recall an image \n ``!list`` to list all memes in the database")
+        message.channel.send("This bot was programmed by DannyDorito ~~using a ton of code from stackoverflow~~ \n \n The commands that can be used are: \n ``,save <name> <url>`` to save a file \n ``,meme <name>`` to recall an image \n ``,list`` to list all memes in the database")
     }
 
     if (cmd === "earth") {
