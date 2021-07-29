@@ -2,9 +2,12 @@ import discord
 from discord.ext import commands
 import json
 
-description = '''An example bot to showcase the discord.ext.commands extension
-module.
-There are a number of utility commands being showcased here.'''
+def write_json(new_data, filename='meme.json'):
+    with open(filename,'r+') as file:
+        file_data = json.load(file)
+        file_data[meme].append(new_data)
+        file.seek(0)
+        json.dump(file_data, file, indent = 4)
 
 bot = commands.Bot(command_prefix=',')
 
@@ -23,11 +26,11 @@ async def earth(ctx):
 
 @bot.command(name="brassmonkey")
 async def brassmonkey(ctx):
-    await ctx.send("<:brassmonkey:869426385062617158>")
+    await ctx.send(":brassmonkey:")
 
 @bot.command(name="meme")
 async def meme(ctx):
-    await ctx.send("<@840036645750702100> Go implement this feature you lazy piece of shit")
+    await ctx.send("@CactiStaccingCrane#5920 Go implement this feature you lazy piece of shit")
 
 @bot.command(name="list")
 async def list(ctx):
@@ -35,14 +38,13 @@ async def list(ctx):
 
 @bot.command(name="delete")
 async def list(ctx, name):
-    await ctx.send("<@840036645750702100> Go implement this feature you lazy piece of shit")
+    await ctx.send("@CactiStaccingCrane#5920 Go implement this feature you lazy piece of shit")
 
 @bot.command(name="save")
 async def save(ctx, name, url):
-    data = {}
-    data[name] = url
+    data = {"name": name, "url": url}
+    write_json(data)
     await ctx.send(name + " has been written to the list, its link is " + url)
-    with open('meme.json', 'w') as outfile: json.dump(data, outfile)
 
 @bot.command(name="github")
 async def list(ctx):
