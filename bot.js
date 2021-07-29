@@ -9,7 +9,7 @@ client.login(login.token);
 
 client
   .on('ready', () => {
-    console.log('Bot logged in. Link status good.');
+    console.log('Bot logged in.');
   })
   // Client message event, contains the logic for the command handler.
   .on('message', (message) => {
