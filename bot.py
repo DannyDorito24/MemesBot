@@ -31,14 +31,19 @@ async def meme(ctx):
 
 @bot.command(name="list")
 async def list(ctx):
+    await ctx.send(file=discord.File(r'/content/meme.json') # being lazy
+
+@bot.command(name="delete")
+async def list(ctx, name):
     await ctx.send("<@840036645750702100> Go implement this feature you lazy piece of shit")
 
 @bot.command(name="save")
 async def save(ctx, name, url):
     data = {}
     data['memes'] = []
-    data['memes'].append({"name": name, "url": url})
-    await ctx.send(name + " has been written to the list, its like is " + url)
+    data['memes'].append("name": name, "url": url)
+    await ctx.send(name + " has been written to the list, its link is " + url)
+    with open('meme.json', 'w') as outfile: json.dump(data, outfile)
 
 @bot.command(name="github")
 async def list(ctx):
