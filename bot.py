@@ -31,7 +31,7 @@ async def meme(ctx):
 
 @bot.command(name="list")
 async def list(ctx):
-    await ctx.send(file=discord.File(r'/content/meme.json') # being lazy
+    await ctx.send(file=discord.File(r'/content/meme.json')) # being lazy
 
 @bot.command(name="delete")
 async def list(ctx, name):
