@@ -18,7 +18,7 @@ async def on_ready():
 
 @bot.command(name="info")
 async def info(ctx):
-    await ctx.send("This bot was programmed by CactiStaccingCrane ~~using a ton of code from stackoverflow and dannydorito~~")
+    await ctx.send("This bot was programmed by CactiStaccingCrane with contributions from DannyDorito.")
 
 @bot.command(name="earth")
 async def earth(ctx):
@@ -26,11 +26,11 @@ async def earth(ctx):
 
 @bot.command(name="brassmonkey")
 async def brassmonkey(ctx):
-    await ctx.send(":brassmonkey:")
+    await ctx.send("<:brassmonkey:869426385062617158>")
 
 @bot.command(name="meme")
 async def meme(ctx):
-    await ctx.send("@CactiStaccingCrane#5920 Go implement this feature you lazy piece of shit")
+    await ctx.send("<@!840036645750702100> Go implement this feature you lazy piece of shit")
 
 @bot.command(name="list")
 async def list(ctx):
@@ -38,7 +38,7 @@ async def list(ctx):
 
 @bot.command(name="delete")
 async def list(ctx, name):
-    await ctx.send("@CactiStaccingCrane#5920 Go implement this feature you lazy piece of shit")
+    await ctx.send("<@!840036645750702100> Go implement this feature you lazy piece of shit")
 
 @bot.command(name="save")
 async def save(ctx, name, url):
