@@ -1,24 +1,15 @@
 import discord
 from discord.ext import commands
-import json
-
-def write_json(new_data, filename='meme.json'):
-    with open(filename,'r+') as file:
-        file_data = json.load(file)
-        file_data[meme].append(new_data)
-        file.seek(0)
-        json.dump(file_data, file, indent = 4)
-
 bot = commands.Bot(command_prefix=',')
 
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user} (ID: {bot.user.id})')
-    print('------')
+    print('---------------------------------------------------')
 
 @bot.command(name="info")
 async def info(ctx):
-    await ctx.send("This bot was programmed by CactiStaccingCrane ~~using a ton of code from stackoverflow and dannydorito~~")
+    await ctx.send("This bot was programmed by CactiStaccingCrane with contributions from DannyDorito.")
 
 @bot.command(name="earth")
 async def earth(ctx):
@@ -26,29 +17,42 @@ async def earth(ctx):
 
 @bot.command(name="brassmonkey")
 async def brassmonkey(ctx):
-    await ctx.send(":brassmonkey:")
+    await ctx.send("<:brassmonkey:869426385062617158>")
 
 @bot.command(name="meme")
-async def meme(ctx):
-    await ctx.send("@CactiStaccingCrane#5920 Go implement this feature you lazy piece of shit")
+async def meme(ctx, name):
+    for line in file:
+        if name in line:
+            del line
+        else:
+            await ctx.send("I am confused af now, check your spelling")
 
 @bot.command(name="list")
 async def list(ctx):
-    await ctx.send(file=discord.File(r'/content/meme.json')) # being lazy
+    await ctx.send(file=discord.File(r'/content/meme.csv')) # being lazy
 
 @bot.command(name="delete")
 async def list(ctx, name):
-    await ctx.send("@CactiStaccingCrane#5920 Go implement this feature you lazy piece of shit")
+    for line in file:
+        if name in line:
+            await ctx.send(line[2])
+        else:
+            await ctx.send("I am confused af now, check your spelling")
 
 @bot.command(name="save")
 async def save(ctx, name, url):
-    data = {"name": name, "url": url}
-    write_json(data)
-    await ctx.send(name + " has been written to the list, its link is " + url)
+    data = name + " , " + url
+    with open("meme.csv", "a+") as file:
+        file.write("\n" + data)
+        for line in file:
+            if name in line and url in line:
+                await ctx.send(name + " and " + url + " has been written to the list")
+            else:
+                await ctx.send("<@!840036645750702100> Go debug this feature you lazy piece of shit")
 
 @bot.command(name="github")
 async def list(ctx):
-    await ctx.send("https:#github.com/DannyDorito24/MemesBot")
+    await ctx.send("https://github.com/DannyDorito24/MemesBot")
     
 bot.run(TOKEN) # reeeeeeeee
 
